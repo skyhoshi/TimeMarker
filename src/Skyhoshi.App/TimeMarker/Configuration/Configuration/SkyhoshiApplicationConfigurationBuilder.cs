@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
+using Microsoft.Extensions.Configuration;
 using Skyhoshi.App.TimeMarker.Configuration.Default;
 using Skyhoshi.Common.Interfaces;
 using Skyhoshi.Common.Interfaces.Configuration;
-using Skyhoshi.Common.Interfaces.Configuration.Common;
 using Skyhoshi.Configuration.Common;
 using Skyhoshi.Configuration.Storage.Schemas.Json;
 
@@ -32,6 +32,10 @@ namespace Skyhoshi.Configuration.Default
         [Browsable(false)] 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public SkyhoshiApplicationJsonConfigurationFileStorage SkyhoshiApplicationJsonConfigurationFileStorage { get; set; }
+
+        public IConfigurationRoot Configuration { get; set; }
+        private SkyhoshiApplicationConfiguration SkyhoshiApplicationConfiguration { get; set; }
+
         [Browsable(false)] 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public string RootStorageLocation { get; set; }
@@ -53,15 +57,20 @@ namespace Skyhoshi.Configuration.Default
 
         public override IApplicationConfiguration LoadFromDefaults()
         {
-            return base.LoadFromDefaults();
+            base.LoadFromDefaults();
+
+            return CreateLoadSettingsFromDefaultLocations();
         }
 
-        public static SkyhoshiApplicationConfiguration CreateLoadSettingsFromDefaultLocations()
+        public SkyhoshiApplicationConfiguration CreateLoadSettingsFromDefaultLocations()
         {
-            SkyhoshiApplicationConfiguration config = new SkyhoshiApplicationConfiguration();
+            SkyhoshiApplicationConfigurationBuilder builder = new SkyhoshiApplicationConfigurationBuilder();
+            Configuration = builder.Build();
             
-            return config;
+            Configuration.Bind(SkyhoshiApplicationConfiguration);
 
+            return SkyhoshiApplicationConfiguration;
         }
+        
     }
 }

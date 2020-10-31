@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Skyhoshi.Common.Interfaces.Configuration.Common;
+using Skyhoshi.Common.Interfaces.Configuration;
 
 namespace Skyhoshi.Common.Interfaces
 {
