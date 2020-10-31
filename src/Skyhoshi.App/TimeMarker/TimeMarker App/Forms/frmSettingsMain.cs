@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using Skyhoshi.App.TimeMarker.Configuration.Default;
 using Skyhoshi.Windows.Forms;
 using Skyhoshi.Common.Interfaces;
 using Skyhoshi.Configuration.Default;
@@ -14,7 +15,7 @@ namespace Skyhoshi.App.TimeMarker
 {
     public partial class frmSettingsMain : Skyhoshi.Windows.Forms.frmNotifyTray
     {
-        private ISkyhoshiApplicationConfiguration AppConfiguration { get; set; }
+        private SkyhoshiApplicationConfiguration AppConfiguration { get; set; }
 
         public frmSettingsMain() : base()
         {
@@ -24,14 +25,19 @@ namespace Skyhoshi.App.TimeMarker
             ToolStripMenuItem showMenuItem = frmNotifyTray.GetShowToolStripMenuItem();
             showMenuItem.Click += (sender, args) => { this.Activate(); };
             this.SystemNotifyIconPrimary.ContextMenuStrip.Items.Add(showMenuItem);
+
+            if (global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration.ValidateConfigurationIsLoaded())
+            {
+               this.AppConfiguration = global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration;
+                this.AudioSettingsPropertyGrid.SelectedObject = AppConfiguration;
+            }
+
+            
         }
         
         private void frmSettingsMain_Load(object sender, EventArgs e)
         {
-            ISkyhoshiApplicationConfiguration config = Configuration.CommonConfiguration<SkyhoshiApplicationConfiguration>.LoadFromConfiguration();
-            config.ValidateConfigurationIsLoaded();
 
-            this.AudioSettingsPropertyGrid.SelectedObject = config;
         }
 
         private void AudioSettingsPropertyGrid_SelectedGridItemChanged(object sender, SelectedGridItemChangedEventArgs e)
