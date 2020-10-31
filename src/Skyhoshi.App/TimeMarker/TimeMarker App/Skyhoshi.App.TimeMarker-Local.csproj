@@ -14,9 +14,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\SkyhoshiLibrary\src\Libraries\Architecture\Skyhoshi.Common\Skyhoshi.Common.csproj" />
-	  <ProjectReference Include="..\..\..\SkyhoshiLibrary\src\Libraries\Configuration\Skyhoshi.Configuration\Skyhoshi.Configuration.csproj" />
-	  <ProjectReference Include="..\..\..\SkyhoshiLibrary\src\Libraries\OS Specific\Windows\Skyhoshi.Windows.Forms\Skyhoshi.Windows.Forms.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\SkyhoshiLibrary\src\Libraries\Architecture\Skyhoshi.Common\Skyhoshi.Common.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\SkyhoshiLibrary\src\Libraries\Drawing\Skyhoshi.Drawing\Skyhoshi.Drawing.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\SkyhoshiLibrary\src\Libraries\OS Specific\Windows\Skyhoshi.Windows.Forms\Skyhoshi.Windows.Forms.csproj" />
+	  <ProjectReference Include="..\Common\Skyhoshi.App.TimeMarker.Common-Local.csproj" />
+	  <ProjectReference Include="..\Configuration\Configuration\Skyhoshi.App.TimeMarker.Configuration.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

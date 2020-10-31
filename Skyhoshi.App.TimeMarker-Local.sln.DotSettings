@@ -1,0 +1,6 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=EF3282F706C22F41B417B1F58E3C5839/AbsolutePath/@EntryValue">R:\Source\github\TimeMarker\tools\Resharper\TeamSharedResharperSettings.DotSettings</s:String>
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=EF3282F706C22F41B417B1F58E3C5839/RelativePath/@EntryValue">..\..\tools\Resharper\TeamSharedResharperSettings.DotSettings</s:String>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=EF3282F706C22F41B417B1F58E3C5839/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileEF3282F706C22F41B417B1F58E3C5839/@KeyIndexDefined">True</s:Boolean>
+	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileEF3282F706C22F41B417B1F58E3C5839/RelativePriority/@EntryValue">1</s:Double></wpf:ResourceDictionary>

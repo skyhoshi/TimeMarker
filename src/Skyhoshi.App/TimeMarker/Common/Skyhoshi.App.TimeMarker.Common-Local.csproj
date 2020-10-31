@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <VersionIdentifier Condition="'$(VersionIdentifier)' == ''">$([System.DateTime]::UtcNow.ToString(mmff))</VersionIdentifier>
+    <VersionPrefix>$([System.DateTime]::UtcNow.Year).$([System.DateTime]::UtcNow.Month).$([System.DateTime]::UtcNow.Day)</VersionPrefix>
+    <VersionSuffix>.$(VersionIdentifier)</VersionSuffix>
+    <AssemblyVersion Condition=" '$(VersionSuffix)' == '' ">$(VersionPrefix)</AssemblyVersion>
+    <AssemblyVersion Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix)$(VersionSuffix)</AssemblyVersion>
+    <Version Condition=" '$(VersionSuffix)' == '' ">$(VersionPrefix)</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix)$(VersionSuffix)</Version>
+    <Authors>Marcus Kern</Authors>
+    <Company>Skyhoshi</Company>
+    <PackageProjectUrl>https://github.com/skyhoshi/SkyhoshiLibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/skyhoshi/SkyhoshiLibrary</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Skyhoshi 2020</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\SkyhoshiLibrary\src\Libraries\Architecture\Skyhoshi.Common\Skyhoshi.Common.csproj" />
+  </ItemGroup>
+
+</Project>

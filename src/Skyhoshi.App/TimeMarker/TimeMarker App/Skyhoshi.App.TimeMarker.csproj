@@ -9,12 +9,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.ApplicationInsights" Version="2.15.0" />
 		<PackageReference Include="Svg" Version="3.1.1" />
-		<PackageReference Include="Skyhoshi.Common" Version="2020.10.26.2545"/>
-		<PackageReference Include="Skyhoshi.Configuration" Version="2020.10.26.2583"/>
-		<PackageReference Include="Skyhoshi.Drawing" Version="2020.10.26.2413"/>
-		<PackageReference Include="Skyhoshi.Windows.Forms" Version="2020.10.26.5874"/>
 	</ItemGroup>
-
 
 	<ItemGroup>
 	  <Compile Update="Icons\ApplicationResources.Designer.cs">

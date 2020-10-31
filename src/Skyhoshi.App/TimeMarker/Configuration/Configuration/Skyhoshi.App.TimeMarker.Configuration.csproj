@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\SkyhoshiLibrary\src\Libraries\Architecture\Skyhoshi.Common\Skyhoshi.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\SkyhoshiLibrary\src\Libraries\Configuration\Skyhoshi.Configuration\Skyhoshi.Configuration.csproj" />
+    <ProjectReference Include="..\..\Common\Skyhoshi.App.TimeMarker.Common-Local.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{9D70BA36-76D9-46BE-946B-6CE2C617D4B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.App.TimeMarker-Local", "src\Skyhoshi.App.TimeMarker\Skyhoshi.App.TimeMarker\Skyhoshi.App.TimeMarker-Local.csproj", "{CEA4CD9D-C58B-4BC3-A5D9-7D4AE3739E26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skyhoshi", "Skyhoshi", "{38BBD90D-FCAF-42FD-9ED0-855C3667C506}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{B62898F3-A71B-4D03-A038-0E1F63D11918}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.Data.TimeMarkerContext", "src\Skyhoshi.Data.TimeMarkerContext\Skyhoshi.Data.TimeMarkerContext.csproj", "{999FD369-58CD-419D-BA4B-F5F1F885E1D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.Data.TimeMarker", "src\Skyhoshi.Data.TimeMarker\Skyhoshi.Data.TimeMarker.csproj", "{58645373-EB22-4D95-A1ED-F4A6B653ACA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skyhoshi.App.TimeMarker", "Skyhoshi.App.TimeMarker", "{E8734421-848A-49D6-B80E-D0B321C25CDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skyhoshi.Data", "Skyhoshi.Data", "{53756E85-51B4-415A-B4A7-4EB4C26CB66F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.App.TimeMarker.Common-Local", "src\Skyhoshi.App.TimeMarker.Common\Skyhoshi.App.TimeMarker.Common-Local.csproj", "{6EAAAABE-1C3D-4996-8B2D-C004BE454BC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.Common", "..\SkyhoshiLibrary\src\Libraries\Architecture\Skyhoshi.Common\Skyhoshi.Common.csproj", "{AF287FDB-42CB-477F-A574-A5C4446D8A7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.Configuration", "..\SkyhoshiLibrary\src\Libraries\Configuration\Skyhoshi.Configuration\Skyhoshi.Configuration.csproj", "{D24129A6-40C0-45B6-864A-CB9B6BFB30FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.Drawing", "..\SkyhoshiLibrary\src\Libraries\Drawing\Skyhoshi.Drawing\Skyhoshi.Drawing.csproj", "{07108303-A677-4A3B-9E31-D76EF78D12A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skyhoshi.Windows.Forms", "..\SkyhoshiLibrary\src\Libraries\OS Specific\Windows\Skyhoshi.Windows.Forms\Skyhoshi.Windows.Forms.csproj", "{5560EBF6-6C5A-4130-86EE-B116C61FA670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEA4CD9D-C58B-4BC3-A5D9-7D4AE3739E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA4CD9D-C58B-4BC3-A5D9-7D4AE3739E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA4CD9D-C58B-4BC3-A5D9-7D4AE3739E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA4CD9D-C58B-4BC3-A5D9-7D4AE3739E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999FD369-58CD-419D-BA4B-F5F1F885E1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999FD369-58CD-419D-BA4B-F5F1F885E1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999FD369-58CD-419D-BA4B-F5F1F885E1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999FD369-58CD-419D-BA4B-F5F1F885E1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58645373-EB22-4D95-A1ED-F4A6B653ACA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58645373-EB22-4D95-A1ED-F4A6B653ACA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58645373-EB22-4D95-A1ED-F4A6B653ACA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58645373-EB22-4D95-A1ED-F4A6B653ACA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EAAAABE-1C3D-4996-8B2D-C004BE454BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EAAAABE-1C3D-4996-8B2D-C004BE454BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EAAAABE-1C3D-4996-8B2D-C004BE454BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EAAAABE-1C3D-4996-8B2D-C004BE454BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF287FDB-42CB-477F-A574-A5C4446D8A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF287FDB-42CB-477F-A574-A5C4446D8A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF287FDB-42CB-477F-A574-A5C4446D8A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF287FDB-42CB-477F-A574-A5C4446D8A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24129A6-40C0-45B6-864A-CB9B6BFB30FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24129A6-40C0-45B6-864A-CB9B6BFB30FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24129A6-40C0-45B6-864A-CB9B6BFB30FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24129A6-40C0-45B6-864A-CB9B6BFB30FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07108303-A677-4A3B-9E31-D76EF78D12A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07108303-A677-4A3B-9E31-D76EF78D12A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07108303-A677-4A3B-9E31-D76EF78D12A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07108303-A677-4A3B-9E31-D76EF78D12A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5560EBF6-6C5A-4130-86EE-B116C61FA670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5560EBF6-6C5A-4130-86EE-B116C61FA670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5560EBF6-6C5A-4130-86EE-B116C61FA670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5560EBF6-6C5A-4130-86EE-B116C61FA670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38BBD90D-FCAF-42FD-9ED0-855C3667C506} = {9D70BA36-76D9-46BE-946B-6CE2C617D4B2}
+		{B62898F3-A71B-4D03-A038-0E1F63D11918} = {9D70BA36-76D9-46BE-946B-6CE2C617D4B2}
+		{999FD369-58CD-419D-BA4B-F5F1F885E1D3} = {53756E85-51B4-415A-B4A7-4EB4C26CB66F}
+		{58645373-EB22-4D95-A1ED-F4A6B653ACA6} = {53756E85-51B4-415A-B4A7-4EB4C26CB66F}
+		{E8734421-848A-49D6-B80E-D0B321C25CDA} = {B62898F3-A71B-4D03-A038-0E1F63D11918}
+		{53756E85-51B4-415A-B4A7-4EB4C26CB66F} = {B62898F3-A71B-4D03-A038-0E1F63D11918}
+		{6EAAAABE-1C3D-4996-8B2D-C004BE454BC3} = {E8734421-848A-49D6-B80E-D0B321C25CDA}
+		{AF287FDB-42CB-477F-A574-A5C4446D8A7D} = {38BBD90D-FCAF-42FD-9ED0-855C3667C506}
+		{D24129A6-40C0-45B6-864A-CB9B6BFB30FC} = {38BBD90D-FCAF-42FD-9ED0-855C3667C506}
+		{07108303-A677-4A3B-9E31-D76EF78D12A6} = {38BBD90D-FCAF-42FD-9ED0-855C3667C506}
+		{5560EBF6-6C5A-4130-86EE-B116C61FA670} = {38BBD90D-FCAF-42FD-9ED0-855C3667C506}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E275593D-6698-4E19-899D-EDBE9D25E873}
+	EndGlobalSection
+EndGlobal

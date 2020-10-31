@@ -8,11 +8,13 @@ using System.Windows.Forms;
 
 namespace Skyhoshi.App.TimeMarker.Forms
 {
-    public partial class frmTimeStampAndRecording : Form
+    public partial class frmTimeStampAndRecording : Skyhoshi.Windows.Forms.frmAudioRecording
     {
-        public frmTimeStampAndRecording()
+        public frmTimeStampAndRecording() :base()
         {
             InitializeComponent();
         }
+
+        
     }
 }

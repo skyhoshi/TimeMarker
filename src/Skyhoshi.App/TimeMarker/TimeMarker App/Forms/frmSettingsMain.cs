@@ -12,7 +12,7 @@ using Skyhoshi.Configuration.Default;
 
 namespace Skyhoshi.App.TimeMarker
 {
-    public partial class frmSettingsMain : Skyhoshi.Windows.Forms.NotifyForm
+    public partial class frmSettingsMain : Skyhoshi.Windows.Forms.frmNotifyTray
     {
         private ISkyhoshiApplicationConfiguration AppConfiguration { get; set; }
 
@@ -21,14 +21,14 @@ namespace Skyhoshi.App.TimeMarker
             InitializeComponent();
 
 
-            ToolStripMenuItem showMenuItem = NotifyForm.GetShowToolStripMenuItem();
+            ToolStripMenuItem showMenuItem = frmNotifyTray.GetShowToolStripMenuItem();
             showMenuItem.Click += (sender, args) => { this.Activate(); };
             this.SystemNotifyIconPrimary.ContextMenuStrip.Items.Add(showMenuItem);
         }
         
         private void frmSettingsMain_Load(object sender, EventArgs e)
         {
-            ISkyhoshiApplicationConfiguration config = Skyhoshi.Configuration.CommonConfiguration<SkyhoshiApplicationConfiguration>.LoadFromConfiguration();
+            ISkyhoshiApplicationConfiguration config = Configuration.CommonConfiguration<SkyhoshiApplicationConfiguration>.LoadFromConfiguration();
             config.ValidateConfigurationIsLoaded();
 
             this.AudioSettingsPropertyGrid.SelectedObject = config;
