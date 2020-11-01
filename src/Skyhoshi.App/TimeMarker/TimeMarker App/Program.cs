@@ -20,13 +20,16 @@ namespace Skyhoshi.App.TimeMarker
         public static SkyhoshiApplicationConfiguration TimeMarkerConfiguration { get; set; } = new SkyhoshiApplicationConfiguration();
 
         
-        public static KeyboardHook KeyBindingHook { get; set; } = new KeyboardHook();
+        public static KeyboardHook KeyBindingHook { get; set; }
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Microsoft.ApplicationInsights.TelemetryClient tc = new TelemetryClient(TelemetryConfiguration.CreateDefault());
             tc.InstrumentationKey = "0270dc4e-ba5a-48e2-9f1d-aac8a1b632c3";
 
@@ -34,10 +37,24 @@ namespace Skyhoshi.App.TimeMarker
 
             TimeMarkerConfiguration.Load();
 
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSettingsMain());
+
+            KeyBindingHook = new KeyboardHook();
+            frmSettingsMain mainForm = new frmSettingsMain();
+            KeyBindingHook.RegisterHotKey(ModifierKeys.Control, Keys.K);
+            KeyBindingHook.KeyPressed += (sender, args) =>
+            {
+                mainForm.Activate();
+                mainForm.Focus();
+                mainForm.BringToFront();
+                Skyhoshi.Windows.Forms.Diagnostics.DebugMessageBox(mainForm);
+            };
+
+
+            Application.Run(mainForm);
+            Application.Idle += (sender, args) =>
+            {
+                //backup database
+            };
             //Application.Run(new frmSettingsMain());
             //Application.Run(new frmSettingsMain());
             //Application.Run(new frmSettingsMain());

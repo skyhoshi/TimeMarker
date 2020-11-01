@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using Skyhoshi.App.TimeMarker.Configuration.Default;
+using Skyhoshi.App.TimeMarker.Forms;
 using Skyhoshi.Windows.Forms;
 using Skyhoshi.Common.Interfaces;
 using Skyhoshi.Configuration.Default;
@@ -48,6 +49,21 @@ namespace Skyhoshi.App.TimeMarker
         private void AudioSettingsPropertyGrid_SelectedObjectsChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSetHotkey_Click(object sender, EventArgs e)
+        {
+            frmKeyBindingRecorder keyBindingRecorder = new frmKeyBindingRecorder();
+            var result = keyBindingRecorder.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                btnTestHotkey_Click(sender, e);
+            }
+        }
+
+        private void btnTestHotkey_Click(object sender, EventArgs e)
+        {
+            //Test the Keybinding by turning off the recording process and show when the keybinding has been pressed.
         }
     }
 }
