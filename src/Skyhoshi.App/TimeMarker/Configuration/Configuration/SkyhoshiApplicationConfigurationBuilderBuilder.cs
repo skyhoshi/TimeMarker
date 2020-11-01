@@ -14,16 +14,16 @@ namespace Skyhoshi.Configuration.Default
     /// <summary>
     /// This class loads and binds the <see cref="SkyhoshiApplicationConfiguration"/> to and from files listed in the root location including Additional Configurations to load
     /// </summary>
-    public class SkyhoshiApplicationConfigurationBuilder : CommonConfiguration<SkyhoshiApplicationConfiguration>, ISkyhoshiApplicationConfiguration
+    public class SkyhoshiApplicationConfigurationBuilderBuilder : CommonConfigurationBuilder<SkyhoshiApplicationConfiguration>, ISkyhoshiApplicationConfiguration
     {
-        public SkyhoshiApplicationConfigurationBuilder()
+        public SkyhoshiApplicationConfigurationBuilderBuilder()
         {
             this.SkyhoshiApplicationJsonConfigurationFileStorage = new SkyhoshiApplicationJsonConfigurationFileStorage();
             this.AdditionalConfigurationsToLoad = new ConcurrentDictionary<IApplicationConfiguration, string>();
             this.RootStorageLocation = SkyhoshiApplicationJsonConfigurationFileStorage.FullPath;
         }
 
-        public SkyhoshiApplicationConfigurationBuilder(string settingsPath) : this()
+        public SkyhoshiApplicationConfigurationBuilderBuilder(string settingsPath) : this()
         {
             this.SkyhoshiApplicationJsonConfigurationFileStorage.SetFullFilePath(settingsPath, Assembly.GetExecutingAssembly().FullName!);
 
@@ -64,8 +64,8 @@ namespace Skyhoshi.Configuration.Default
 
         public SkyhoshiApplicationConfiguration CreateLoadSettingsFromDefaultLocations()
         {
-            SkyhoshiApplicationConfigurationBuilder builder = new SkyhoshiApplicationConfigurationBuilder();
-            Configuration = builder.Build();
+            SkyhoshiApplicationConfigurationBuilderBuilder builderBuilder = new SkyhoshiApplicationConfigurationBuilderBuilder();
+            Configuration = builderBuilder.Build();
             
             Configuration.Bind(SkyhoshiApplicationConfiguration);
 
