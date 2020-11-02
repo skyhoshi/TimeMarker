@@ -42,6 +42,9 @@
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TimeMakerSettingsTabControl = new System.Windows.Forms.TabControl();
+            this.tbpgGeneralSettings = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.prptyGridGeneralSettings = new System.Windows.Forms.PropertyGrid();
             this.tbpgKeyBinding = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,6 +60,8 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1.SuspendLayout();
             this.TimeMakerSettingsTabControl.SuspendLayout();
+            this.tbpgGeneralSettings.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
             this.tbpgKeyBinding.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -115,6 +120,7 @@
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Visible = false;
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // printToolStripButton
             // 
@@ -187,6 +193,7 @@
             // 
             // TimeMakerSettingsTabControl
             // 
+            this.TimeMakerSettingsTabControl.Controls.Add(this.tbpgGeneralSettings);
             this.TimeMakerSettingsTabControl.Controls.Add(this.tbpgKeyBinding);
             this.TimeMakerSettingsTabControl.Controls.Add(this.tbpgAudioRecording);
             this.TimeMakerSettingsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -195,6 +202,36 @@
             this.TimeMakerSettingsTabControl.SelectedIndex = 0;
             this.TimeMakerSettingsTabControl.Size = new System.Drawing.Size(800, 403);
             this.TimeMakerSettingsTabControl.TabIndex = 3;
+            this.TimeMakerSettingsTabControl.SelectedIndexChanged += new System.EventHandler(this.TimeMakerSettingsTabControl_SelectedIndexChanged);
+            // 
+            // tbpgGeneralSettings
+            // 
+            this.tbpgGeneralSettings.Controls.Add(this.flowLayoutPanel4);
+            this.tbpgGeneralSettings.Location = new System.Drawing.Point(4, 24);
+            this.tbpgGeneralSettings.Name = "tbpgGeneralSettings";
+            this.tbpgGeneralSettings.Size = new System.Drawing.Size(792, 375);
+            this.tbpgGeneralSettings.TabIndex = 2;
+            this.tbpgGeneralSettings.Text = "General Settings";
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.prptyGridGeneralSettings);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(792, 375);
+            this.flowLayoutPanel4.TabIndex = 0;
+            // 
+            // prptyGridGeneralSettings
+            // 
+            this.prptyGridGeneralSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prptyGridGeneralSettings.Location = new System.Drawing.Point(3, 3);
+            this.prptyGridGeneralSettings.MinimumSize = new System.Drawing.Size(344, 366);
+            this.prptyGridGeneralSettings.Name = "prptyGridGeneralSettings";
+            this.prptyGridGeneralSettings.Size = new System.Drawing.Size(359, 366);
+            this.prptyGridGeneralSettings.TabIndex = 0;
             // 
             // tbpgKeyBinding
             // 
@@ -357,6 +394,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.TimeMakerSettingsTabControl.ResumeLayout(false);
+            this.tbpgGeneralSettings.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
             this.tbpgKeyBinding.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -398,5 +437,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.Button btnSetHotkey;
+        private System.Windows.Forms.TabPage tbpgGeneralSettings;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.PropertyGrid prptyGridGeneralSettings;
     }
 }

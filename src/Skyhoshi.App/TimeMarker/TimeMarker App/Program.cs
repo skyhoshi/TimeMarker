@@ -17,7 +17,7 @@ namespace Skyhoshi.App.TimeMarker
 {
     static class Program
     {
-        public static SkyhoshiApplicationConfiguration TimeMarkerConfiguration { get; set; } = new SkyhoshiApplicationConfiguration();
+        public static SkyhoshiCommonApplicationConfiguration TimeMarkerConfiguration { get; set; } = new SkyhoshiCommonApplicationConfiguration();
 
         
         public static KeyboardHook KeyBindingHook { get; set; }
@@ -33,7 +33,9 @@ namespace Skyhoshi.App.TimeMarker
             Microsoft.ApplicationInsights.TelemetryClient tc = new TelemetryClient(TelemetryConfiguration.CreateDefault());
             tc.InstrumentationKey = "0270dc4e-ba5a-48e2-9f1d-aac8a1b632c3";
 
-            //TimeMarkerConfiguration = SkyhoshiApplicationConfigurationBuilderBuilder.CreateLoadSettingsFromDefaultLocations();
+            //TimeMarkerConfiguration = SkyhoshiApplicationConfigurationBuilder.CreateLoadSettingsFromDefaultLocations();
+
+            
 
             TimeMarkerConfiguration.Load();
 
@@ -43,10 +45,18 @@ namespace Skyhoshi.App.TimeMarker
             KeyBindingHook.RegisterHotKey(ModifierKeys.Control, Keys.K);
             KeyBindingHook.KeyPressed += (sender, args) =>
             {
-                mainForm.Activate();
-                mainForm.Focus();
-                mainForm.BringToFront();
-                Skyhoshi.Windows.Forms.Diagnostics.DebugMessageBox(mainForm);
+                if (TimeMarkerConfiguration.BringAnyOpenWindowToFrontOnShortcutKeyPressed)
+                {
+                    mainForm.Activate();
+                    mainForm.Focus();
+                    mainForm.BringToFront();
+                }
+
+                if (TimeMarkerConfiguration.AllowAnyMessageBoxOnShortcutKeyPressed)
+                {
+                    Skyhoshi.Windows.Forms.Diagnostics.DebugMessageBox(mainForm);
+                }
+                System.Diagnostics.Debug.WriteLine($"Shortcut Key's pressed");
             };
 
 
@@ -67,6 +77,11 @@ namespace Skyhoshi.App.TimeMarker
             {
                 Application.Exit();
             }
+        }
+
+        public static void SaveConfiguration()
+        {
+            TimeMarkerConfiguration.Save();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Skyhoshi.App.TimeMarker
 {
     public partial class frmSettingsMain : Skyhoshi.Windows.Forms.frmNotifyTray
     {
-        private SkyhoshiApplicationConfiguration AppConfiguration { get; set; }
+        private SkyhoshiCommonApplicationConfiguration AppConfiguration { get; set; }
 
         public frmSettingsMain() : base()
         {
@@ -26,19 +26,20 @@ namespace Skyhoshi.App.TimeMarker
             ToolStripMenuItem showMenuItem = frmNotifyTray.GetShowToolStripMenuItem();
             showMenuItem.Click += (sender, args) => { this.Activate(); };
             this.SystemNotifyIconPrimary.ContextMenuStrip.Items.Add(showMenuItem);
-
-            if (global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration.ValidateConfigurationIsLoaded())
+            if (this.TimeMakerSettingsTabControl.SelectedIndex == 0)
             {
-               this.AppConfiguration = global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration;
-                this.AudioSettingsPropertyGrid.SelectedObject = AppConfiguration;
+                TimeMakerSettingsTabControl_SelectedIndexChanged(this, null);
             }
-
-            
         }
         
         private void frmSettingsMain_Load(object sender, EventArgs e)
         {
-
+            if (global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration.ValidateConfigurationIsLoaded())
+            {
+                this.AppConfiguration = global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration;
+                this.AudioSettingsPropertyGrid.SelectedObject = AppConfiguration;
+            }
+            this.prptyGridGeneralSettings.SelectedObject = global::Skyhoshi.App.TimeMarker.Program.TimeMarkerConfiguration;
         }
 
         private void AudioSettingsPropertyGrid_SelectedGridItemChanged(object sender, SelectedGridItemChangedEventArgs e)
@@ -64,6 +65,32 @@ namespace Skyhoshi.App.TimeMarker
         private void btnTestHotkey_Click(object sender, EventArgs e)
         {
             //Test the Keybinding by turning off the recording process and show when the keybinding has been pressed.
+        }
+
+        private void TimeMakerSettingsTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.saveToolStripButton.Visible = false;
+
+            switch (TimeMakerSettingsTabControl.SelectedIndex)
+            {
+
+                case 0://General Settings
+                    this.saveToolStripButton.Visible = true;
+                    break;
+                case 1: //Shortcut Keys
+
+                    break;
+                case 2: //Audio Recordings
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            Program.SaveConfiguration();
         }
     }
 }
